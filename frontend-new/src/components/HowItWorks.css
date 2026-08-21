@@ -1,0 +1,99 @@
+.how-it-works-section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.step-card {
+  padding: 40px 32px;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.05);
+}
+
+.step-number {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.03);
+  z-index: 0;
+  transition: color var(--transition-normal);
+}
+
+.step-card:hover .step-number {
+  color: rgba(0, 240, 255, 0.08);
+}
+
+.step-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(var(--primary-color-rgb), 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.step-icon {
+  color: var(--primary-color);
+}
+
+.step-card:nth-child(even) .step-icon-wrapper {
+  background: rgba(var(--secondary-color-rgb), 0.1);
+}
+
+.step-card:nth-child(even) .step-icon {
+  color: var(--secondary-color);
+}
+
+.step-card:nth-child(even):hover {
+  border-color: rgba(176, 38, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(176, 38, 255, 0.05);
+}
+
+.step-title {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.step-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
